@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — PhotoSync</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, Segoe UI, Arial, sans-serif;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 48px 20px;
+    line-height: 1.6;
+  }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.15rem; margin-top: 2em; }
+  .updated { color: #777; font-size: 0.9rem; }
+  a.back { display: inline-block; margin-top: 2.5em; }
+  code { background: #8882; padding: 0.1em 0.4em; border-radius: 4px; }
+</style>
+</head>
+<body>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: October 2, 2026</p>
+
+  <p>PhotoSync is a Windows application that runs entirely on your own computer. This policy explains exactly what data it touches, where it goes, and what it doesn't do.</p>
+
+  <h2>What PhotoSync does</h2>
+  <p>PhotoSync watches folders you choose on your PC and uploads new or changed photos and videos to <strong>your own Google Photos account</strong>, using the official Google Photos Library API. You sign in with your own Google account and grant PhotoSync permission directly through Google's own sign-in screen.</p>
+
+  <h2>What permissions PhotoSync requests from Google</h2>
+  <ul>
+    <li><code>photoslibrary.appendonly</code> — lets PhotoSync add new photos/videos to your library. This is an upload-only permission: PhotoSync cannot read, browse, or download your existing Google Photos library through this permission.</li>
+    <li><code>userinfo.email</code> — lets PhotoSync show which Google account is currently signed in.</li>
+  </ul>
+
+  <h2>Where your data lives</h2>
+  <p>Everything PhotoSync stores lives locally on your own PC:</p>
+  <ul>
+    <li>A local database tracking which files have already been uploaded (so the same photo isn't uploaded twice), stored at <code>%LOCALAPPDATA%\PhotoSync\photosync.db</code>.</li>
+    <li>Your Google sign-in token, encrypted using Windows' built-in Data Protection API (DPAPI), tied to your Windows user account. This token is never transmitted anywhere except directly to Google's own servers when PhotoSync needs to refresh your sign-in or upload a file.</li>
+    <li>Local log files at <code>%LOCALAPPDATA%\PhotoSync\logs\</code>, used only for troubleshooting on your own machine.</li>
+  </ul>
+
+  <h2>What PhotoSync does not do</h2>
+  <ul>
+    <li>No analytics, telemetry, crash reporting, or usage tracking of any kind.</li>
+    <li>No server operated by the developer — PhotoSync talks directly to Google's API from your PC. The developer has no access to your photos, files, or Google account.</li>
+    <li>No sharing or selling of data to any third party, because no data is ever collected by the developer in the first place.</li>
+  </ul>
+
+  <h2>Uninstalling</h2>
+  <p>Removing PhotoSync and deleting the folders above removes all local data it stored. Revoking PhotoSync's access from your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account permissions page</a> immediately invalidates its ability to upload on your behalf.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy: <a href="mailto:rdelaborde@gmail.com">rdelaborde@gmail.com</a></p>
+
+  <a class="back" href="index.html">← Back to PhotoSync</a>
+</body>
+</html>
